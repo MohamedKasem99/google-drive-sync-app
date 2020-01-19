@@ -25,7 +25,7 @@ class API():
             if self.creds and self.creds.expired and self.creds.refresh_token:
                 self.creds.refresh(Request())
             else:
-                flow = InstalledAppFlow.from_c/media/kasem/Happy_place/University stuff/PlayGround/Google Drive sync app/lient_secrets_file(
+                flow = InstalledAppFlow.from_client_secrets_file(
                     os.path.join(os.getcwd(),'credentials/client_secret.json'), SCOPES)
                 self.creds = flow.run_local_server(port=0)
             # Save the credentials for the next run
@@ -69,8 +69,8 @@ class API():
             while replace != 'n' and replace != 'y': 
                 replace = input("Enter again\nTo overwrite enter: n \nTo keep as seprate files: y\n choice: ")
 
-        if replace == 'n':
-            file_path = file_path[:file_path.find('.')] + f'({1})' + file_path[file_path.find('.'):]
+            if replace == 'n':
+                file_path = file_path[:file_path.find('.')] + f'({1})' + file_path[file_path.find('.'):]
         
         request = self.service.files().get_media(fileId=file_id)
         fh = io.BytesIO()
