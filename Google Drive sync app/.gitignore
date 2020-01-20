@@ -1,6 +1,0 @@
-.vscode/
-*.ipynb
-venv_google_api/
-.ipynb_checkpoints/
-.credentials/
-token.pickle
