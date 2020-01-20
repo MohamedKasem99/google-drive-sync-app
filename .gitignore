@@ -2,5 +2,5 @@
 *.ipynb
 venv_google_api/
 .ipynb_checkpoints/
-.credentials/
+credentials/
 token.pickle
